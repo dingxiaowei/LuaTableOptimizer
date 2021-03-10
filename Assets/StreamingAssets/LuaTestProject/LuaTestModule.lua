@@ -14,12 +14,12 @@ function LuaTestModule:serialize(obj)
 		for k, v in pairs(obj) do
 			lua = lua .. "[" .. self:serialize(k) .. "]=" .. self:serialize(v) .. ",\n"
 		end
-    local metatable = getmetatable(obj)
-        if metatable ~= nil and type(metatable.__index) == "table" then
-        for k, v in pairs(metatable.__index) do
-            lua = lua .. "[" .. self:serialize(k) .. "]=" .. self:serialize(v) .. ",\n"
-        end
-    end
+		local metatable = getmetatable(obj)
+			if metatable ~= nil and type(metatable.__index) == "table" then
+				for k, v in pairs(metatable.__index) do
+					lua = lua .. "[" .. self:serialize(k) .. "]=" .. self:serialize(v) .. ",\n"
+				end
+			end
         lua = lua .. "}"
     elseif t == "nil" then
         return nil
