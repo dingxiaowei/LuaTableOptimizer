@@ -1,0 +1,1 @@
+lua "Assets/StreamingAssets/LuaTest.lua"
