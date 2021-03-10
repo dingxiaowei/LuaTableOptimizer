@@ -1,1 +1,0 @@
-lua "Assets/StreamingAssets/LuaRoot/DataTableOptimizer.lua"
